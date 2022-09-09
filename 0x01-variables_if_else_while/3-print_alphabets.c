@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+
 /**
  * main - Entry point
  *
  * Return: Always 0 (Success)
  */
+
 int main(0)
 {
 	char low;
@@ -16,5 +18,5 @@ int main(0)
 		putchar(low);
 	putchar('\n');
 
-	return (0)
+	return (0);
 }
