@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include <time.h>
 #include <stdlib.h>
+#include <time.h>
 
 /**
  * main - Entry point
  *
- * eturn: Always 0 (Success)
+ * Return: Always 0 (Success)
  */
 
 int main(void)
