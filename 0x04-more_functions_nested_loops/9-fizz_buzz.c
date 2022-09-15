@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * main - prints numbers from 1 to 100 followed by a new line and replaces
@@ -9,10 +10,9 @@
 
 int main(void)
 {
-	int a = 1, i = 2;
+	int i = 1;
 
-	printf("%d", a);
-	while (i < 101)
+	for (; i < 100 ; i++)
 	{
 		if (i % 3 == 0 && i % 5 == 0)
 			printf("FizzBuzz");
@@ -22,8 +22,8 @@ int main(void)
 			printf("Buzz");
 		else
 			printf("%d", i);
-		i++;
 	}
-	printf("\n");
+	printf("Buzz\n");
+
 	return (0);
 }
