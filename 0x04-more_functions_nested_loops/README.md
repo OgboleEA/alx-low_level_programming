@@ -1,1 +1,1 @@
-Write a function that checks for uppercase character
+The standard library provides a similar function: isdigit
