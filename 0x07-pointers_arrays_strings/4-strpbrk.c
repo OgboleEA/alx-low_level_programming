@@ -11,32 +11,18 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	if (s == NULL || accept == NULL)
-	{
-		return (NULL);
-	}
+	int i;
+	int j;
 
-	while (*s)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (_strchr(accept, *s))
-			return (s);
-		s++;
+		for (j = 0; accept[j] != '\0'; j++)
+		{
+			if (s[i] == accept[j])
+			{
+				return (s + i);
+			}
+		}
 	}
-	return (NULL);
-}
-/**
- *
- * @s: string.
- * @c: character to be located.
- * Return: pointer to first occurrence of NULL if no character found.
- */
-char *_strchr(char *s, char c)
-{
-	do
-	{
-		if (*s == c)
-			return (s);
-	}
-	while (*s++);
-	return (NULL);
+	return (0);
 }
