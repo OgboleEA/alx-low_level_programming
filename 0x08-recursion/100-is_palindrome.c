@@ -5,10 +5,9 @@ int _strlen_recursion(char *s);
 int helper_palindrome(char *s, int len);
 
 /**
- * is_palindrome - returns 1 if a string is a palindrome and 0 if not
- *
- * @s: string
- * Return: int
+ * _strlen_recursion - A function to obtain the length of the string s
+ * @s: A string to calculate length
+ * Return: the length of string s
  */
 int _strlen_recursion(char *s)
 {
