@@ -9,7 +9,13 @@
 
 int _sqrt_recursion(int n)
 {
-	return (halp(n, 1));
+	int square = 2;
+
+	if (n < 0)
+		return (-1);
+	else if (n == 0 || n == 1)
+		return (n);
+	return (is_sqrt(n, square));
 }
 
 /**
@@ -18,16 +24,13 @@ int _sqrt_recursion(int n)
  * @i: incrementer to compare against `c`
  * Return: square root if natural square root, or -1 if none found
  */
-
-int halp(int c, int i)
+int is_sqrt(int n, int square)
 {
-	int square;
-
-	square = i * i;
-	if (square == c)
-		return (i);
-	else if (square < c)
-		return (halp(c, i + 1));
-	else
+	if (square * square == n)
+		return (square);
+	else if (square * square < n)
+		return (is_sqrt(n, square + 1));
+	else if (square * square > n)
 		return (-1);
+	return (-1);
 }
