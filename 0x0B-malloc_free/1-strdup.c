@@ -4,7 +4,6 @@
 /**
  * _strdup - duplicates string
  * @str: string to copy
- *
  * Return: char to newly duplicated string
  */
 
