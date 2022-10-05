@@ -1,39 +1,47 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
+
 /**
- * **alloc_grid - dynamically create 2d array and initialize each element to 0
- * @width: no. of columns
- * @height: no. of rows
+ * alloc_grid - Returns a pointer to a 2-dimensional array of
+ * integers with each element initalized to 0.
+ * @width: The width of the 2-dimensional array.
+ * @height: The height of the 2-dimensional array.
  *
- * Return: pointer to the 2d array or NULL if failure occurs
+ * Return: If width <= 0, height <= 0, or the function fails - NULL.
+ * Otherwise - a pointer to the 2-dimensional array of integers.
  */
 int **alloc_grid(int width, int height)
 {
-	int **a;
-	int index, i, j;
+	int **twoD;
+	int hgt_index, wid_index;
 
 	if (width <= 0 || height <= 0)
-		return (0);
-	a = (int **)malloc(sizeof(int *) * height);
-	if (a == 0)
+		return (NULL);
+
+	twoD = malloc(sizeof(int *) * height);
+
+	if (twoD == NULL)
+		return (NULL);
+
+	for (hgt_index = 0; hgt_index < height; hgt_index++)
 	{
-		return (0);
+		twoD[hgt_index] = malloc(sizeof(int) * width);
+
+		if (twoD[hgt_index] == NULL)
+		{
+			for (; hgt_index >= 0; hgt_index--)
+				free(twoD[hgt_index]);
+
+			free(twoD);
+			return (NULL);
+		}
 	}
-	for (index = 0; index < height; index++)
-{
-	*(a + index) = (int *)malloc(sizeof(int) * width);
+
+	for (hgt_index = 0; hgt_index < height; hgt_index++)
 	{
-		for (i = 0; i < index; i++)
-			free(*(a + i));
-		free(a);
-		return (0);
+		for (wid_index = 0; wid_index < width; wid_index++)
+			twoD[hgt_index][wid_index] = 0;
 	}
-}
-for (i = 0; i < height; i++)
-{
-	for (j = 0; j < width; j++)
-		*(*(a + i) + j) = 0;
-}
-return (a);
+
+	return (twoD);
 }
