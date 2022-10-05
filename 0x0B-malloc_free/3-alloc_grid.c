@@ -1,5 +1,6 @@
+#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
-
 /**
  * **alloc_grid - dynamically create 2d array and initialize each element to 0
  * @width: no. of columns
