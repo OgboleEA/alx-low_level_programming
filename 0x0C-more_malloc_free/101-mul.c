@@ -30,7 +30,6 @@ int find_len(char *str)
  * Description: If there is insufficient space, the
  * function exits with a status of 98.
  * Return: A pointer to the array.
- * Return: A pointer to the array.
  */
 char *create_xarray(int size)
 {
@@ -55,6 +54,7 @@ char *create_xarray(int size)
  * @str: The string of numbers to be iterate through.
  *
  * @str: The string of numbers to be iterate through.
+ * Return: iterate_zeroes.
  */
 char *iterate_zeroes(char *str)
 {
