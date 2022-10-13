@@ -1,6 +1,7 @@
 #include "variadic_functions.h"
 #include <stdlib.h>
 #include <stdio.h>
+
 /**
  * _printchar - print char type element from va_list
  * @list: va_list passed to function
